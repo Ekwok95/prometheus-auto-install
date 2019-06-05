@@ -28,7 +28,7 @@ sudo chown prometheus:prometheus /usr/local/bin/prometheus
 sudo chown prometheus:prometheus /usr/local/bin/promtool
 
 #Create config file
-sudo cat <<EOT >> /etc/prometheus/prometheus.yml
+sudo bash -c cat <<EOT >> /etc/prometheus/prometheus.yml
 global:
   scrape_interval: 10s
  
@@ -43,7 +43,7 @@ EOT
 sudo chown prometheus:prometheus /etc/prometheus/prometheus.yml
 
 #Create prometheus service file
-sudo cat <<EOT >> /etc/systemd/system/prometheus.service
+sudo bash -c cat <<EOT >> /etc/systemd/system/prometheus.service
 [Unit]
 Description=Prometheus
 Wants=network-online.target
